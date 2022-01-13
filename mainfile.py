@@ -21,9 +21,9 @@ def face_authentication():
     global name_of_person
     name_check = input("Enter your name for authentication : ")     # its only for authentication purpose
     print("Please show your face to camera for security purpose")
-    haar_file="D:\\Python\\Projects\\Attendance using facial recognition\\haarcascade_frontalface_default.xml"     # pls mention the correct directory of XML file   
+    haar_file="haarcascade_frontalface_default.xml"     # pls mention the correct directory of XML file   
     face_cascade=cv2.CascadeClassifier(haar_file)
-    datasets="D:\\Python\\Projects\\Attendance using facial recognition\\datasets"    # pls mention the correct directory for datasets
+    datasets="datasets"    # pls mention the correct directory for datasets
     (images,labels,names,id)=([],[],{},0)
     cam=cv2.VideoCapture(0)
     for (subdirs,dirs,files) in os.walk(datasets):
@@ -68,7 +68,7 @@ def face_authentication():
                 if (cnt>100):
                     print("Unknown Person")   
                     cv2.imwrite("unknown.png",img)
-                    unknown_persons ="D:\\Python\\Projects\\Attendance using facial recognition\\unknown_persons"    # pls mention the correct directory for unknown persons
+                    unknown_persons ="unknown_persons"    # pls mention the correct directory for unknown persons
                     path = os.path.join(unknown_persons,name_check)
                     if not os.path.isdir(path):
                         os.mkdir(path)
