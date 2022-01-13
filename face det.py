@@ -1,9 +1,9 @@
 import cv2
 import os
 
-alg="D:\\Python\\Projects\\E-Voting\\haarcascade_frontalface_default.xml"  # mention the directory correctly
+alg="haarcascade_frontalface_default.xml"  # mention the directory correctly
 haar=cv2.CascadeClassifier(alg)
-datasets="D:\\Python\\Projects\\Attendance using facial recognition\datasets"  # mention the directory to store dataset
+datasets="datasets"  # mention the directory to store dataset
 name="sk"    # name for the folder name in datasets, change names for the next time while u doing the dataset creation process 
 
 cam=cv2.VideoCapture(0)   # if u r using webcam type (0) or u r using additional camera means type (1)
